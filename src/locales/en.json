@@ -1,0 +1,34 @@
+{
+  "search": {
+    "placeholder": "Search news...",
+    "clear": "Clear search"
+  },
+  "categories": {
+    "general": "General",
+    "business": "Business",
+    "technology": "Technology",
+    "science": "Science",
+    "health": "Health",
+    "sports": "Sports",
+    "entertainment": "Entertainment"
+  },
+  "article": {
+    "readMore": "Read more"
+  },
+  "loading": {
+    "articles": "Loading articles..."
+  },
+  "error": {
+    "title": "Oops! Something went wrong",
+    "description": "We couldn't load the news. Please try again later."
+  },
+  "empty": {
+    "title": "No articles found",
+    "description": "Try adjusting your search or filters."
+  },
+  "footer": {
+    "tagline": "Your global news source",
+    "poweredBy": "Powered by",
+    "rights": "All rights reserved."
+  }
+}

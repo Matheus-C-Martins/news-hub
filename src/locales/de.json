@@ -1,0 +1,34 @@
+{
+  "search": {
+    "placeholder": "Nachrichten suchen...",
+    "clear": "Suche löschen"
+  },
+  "categories": {
+    "general": "Allgemein",
+    "business": "Geschäft",
+    "technology": "Technologie",
+    "science": "Wissenschaft",
+    "health": "Gesundheit",
+    "sports": "Sport",
+    "entertainment": "Unterhaltung"
+  },
+  "article": {
+    "readMore": "Weiterlesen"
+  },
+  "loading": {
+    "articles": "Artikel werden geladen..."
+  },
+  "error": {
+    "title": "Hoppla! Etwas ist schief gelaufen",
+    "description": "Wir konnten die Nachrichten nicht laden. Bitte versuchen Sie es später erneut."
+  },
+  "empty": {
+    "title": "Keine Artikel gefunden",
+    "description": "Versuchen Sie, Ihre Suche oder Filter anzupassen."
+  },
+  "footer": {
+    "tagline": "Ihre globale Nachrichtenquelle",
+    "poweredBy": "Betrieben von",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

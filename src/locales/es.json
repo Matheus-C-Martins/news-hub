@@ -1,0 +1,34 @@
+{
+  "search": {
+    "placeholder": "Buscar noticias...",
+    "clear": "Limpiar búsqueda"
+  },
+  "categories": {
+    "general": "General",
+    "business": "Negocios",
+    "technology": "Tecnología",
+    "science": "Ciencia",
+    "health": "Salud",
+    "sports": "Deportes",
+    "entertainment": "Entretenimiento"
+  },
+  "article": {
+    "readMore": "Leer más"
+  },
+  "loading": {
+    "articles": "Cargando artículos..."
+  },
+  "error": {
+    "title": "¡Ups! Algo salió mal",
+    "description": "No pudimos cargar las noticias. Inténtalo de nuevo más tarde."
+  },
+  "empty": {
+    "title": "No se encontraron artículos",
+    "description": "Intenta ajustar tu búsqueda o filtros."
+  },
+  "footer": {
+    "tagline": "Tu fuente global de noticias",
+    "poweredBy": "Desarrollado con",
+    "rights": "Todos los derechos reservados."
+  }
+}
