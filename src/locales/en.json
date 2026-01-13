@@ -1,6 +1,8 @@
 {
   "search": {
-    "placeholder": "Search news...",
+    "title": "Discover News",
+    "subtitle": "Search through thousands of articles from around the world",
+    "placeholder": "Search for news, topics, or sources...",
     "clear": "Clear search"
   },
   "categories": {
@@ -13,21 +15,30 @@
     "entertainment": "Entertainment"
   },
   "article": {
-    "readMore": "Read more"
+    "readMore": "Read Article"
   },
   "loading": {
-    "articles": "Loading articles..."
+    "articles": "Loading Articles",
+    "subtitle": "Fetching the latest news for you..."
   },
   "error": {
     "title": "Oops! Something went wrong",
-    "description": "We couldn't load the news. Please try again later."
+    "description": "We couldn't load the news. Please try again later.",
+    "retry": "Try Again"
   },
   "empty": {
-    "title": "No articles found",
-    "description": "Try adjusting your search or filters."
+    "title": "No Articles Found",
+    "description": "Try adjusting your search or filter to find what you're looking for."
+  },
+  "results": {
+    "title": "Latest News",
+    "articles": "articles found"
   },
   "footer": {
     "tagline": "Your global news source",
+    "aboutTitle": "About",
+    "aboutText": "News Hub aggregates the latest news from trusted sources worldwide, providing you with a modern, multilingual reading experience.",
+    "languagesTitle": "Languages",
     "poweredBy": "Powered by",
     "rights": "All rights reserved."
   }

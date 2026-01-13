@@ -1,6 +1,8 @@
 {
   "search": {
-    "placeholder": "Rechercher des actualités...",
+    "title": "Découvrir l'Actualité",
+    "subtitle": "Recherchez parmi des milliers d'articles du monde entier",
+    "placeholder": "Rechercher des actualités, sujets ou sources...",
     "clear": "Effacer la recherche"
   },
   "categories": {
@@ -13,21 +15,30 @@
     "entertainment": "Divertissement"
   },
   "article": {
-    "readMore": "Lire la suite"
+    "readMore": "Lire l'Article"
   },
   "loading": {
-    "articles": "Chargement des articles..."
+    "articles": "Chargement des Articles",
+    "subtitle": "Récupération des dernières actualités pour vous..."
   },
   "error": {
     "title": "Oups! Quelque chose s'est mal passé",
-    "description": "Nous n'avons pas pu charger les actualités. Veuillez réessayer plus tard."
+    "description": "Nous n'avons pas pu charger les actualités. Veuillez réessayer plus tard.",
+    "retry": "Réessayer"
   },
   "empty": {
-    "title": "Aucun article trouvé",
-    "description": "Essayez d'ajuster votre recherche ou vos filtres."
+    "title": "Aucun Article Trouvé",
+    "description": "Essayez d'ajuster votre recherche ou filtre pour trouver ce que vous cherchez."
+  },
+  "results": {
+    "title": "Dernières Actualités",
+    "articles": "articles trouvés"
   },
   "footer": {
     "tagline": "Votre source mondiale d'actualités",
+    "aboutTitle": "À propos",
+    "aboutText": "News Hub regroupe les dernières actualités de sources fiables du monde entier, vous offrant une expérience de lecture moderne et multilingue.",
+    "languagesTitle": "Langues",
     "poweredBy": "Propulsé par",
     "rights": "Tous droits réservés."
   }

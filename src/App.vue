@@ -15,6 +15,7 @@
         :articles="filteredArticles"
         :loading="loading"
         :error="error"
+        @retry="loadNews"
       />
     </main>
     
@@ -23,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Header from './components/Header.vue'
 import SearchBar from './components/SearchBar.vue'
@@ -51,7 +52,7 @@ const changeLanguage = (lang) => {
   currentLanguage.value = lang
   locale.value = lang
   localStorage.setItem('language', lang)
-  loadNews()
+  loadNews(activeCategory.value)
 }
 
 const handleSearch = (query) => {
@@ -68,6 +69,7 @@ const handleSearch = (query) => {
 
 const handleCategoryFilter = (category) => {
   activeCategory.value = category
+  searchQuery.value = ''
   loadNews(category)
 }
 
@@ -102,21 +104,21 @@ onMounted(() => {
 <style lang="scss" scoped>
 .app {
   min-height: 100vh;
-  background-color: var(--bg-primary);
+  background: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem 1rem;
-  min-height: calc(100vh - 200px);
+  padding: 3rem 2rem;
+  min-height: calc(100vh - 300px);
 }
 
 @media (max-width: 768px) {
   .main-content {
-    padding: 1rem 0.5rem;
+    padding: 2rem 1rem;
   }
 }
 </style>

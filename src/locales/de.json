@@ -1,6 +1,8 @@
 {
   "search": {
-    "placeholder": "Nachrichten suchen...",
+    "title": "Nachrichten Entdecken",
+    "subtitle": "Durchsuchen Sie Tausende von Artikeln aus der ganzen Welt",
+    "placeholder": "Suche nach Nachrichten, Themen oder Quellen...",
     "clear": "Suche löschen"
   },
   "categories": {
@@ -13,21 +15,30 @@
     "entertainment": "Unterhaltung"
   },
   "article": {
-    "readMore": "Weiterlesen"
+    "readMore": "Artikel Lesen"
   },
   "loading": {
-    "articles": "Artikel werden geladen..."
+    "articles": "Artikel Werden Geladen",
+    "subtitle": "Die neuesten Nachrichten für Sie werden abgerufen..."
   },
   "error": {
     "title": "Hoppla! Etwas ist schief gelaufen",
-    "description": "Wir konnten die Nachrichten nicht laden. Bitte versuchen Sie es später erneut."
+    "description": "Wir konnten die Nachrichten nicht laden. Bitte versuchen Sie es später erneut.",
+    "retry": "Erneut Versuchen"
   },
   "empty": {
-    "title": "Keine Artikel gefunden",
-    "description": "Versuchen Sie, Ihre Suche oder Filter anzupassen."
+    "title": "Keine Artikel Gefunden",
+    "description": "Versuchen Sie, Ihre Suche oder Filter anzupassen, um zu finden, wonach Sie suchen."
+  },
+  "results": {
+    "title": "Neueste Nachrichten",
+    "articles": "Artikel gefunden"
   },
   "footer": {
     "tagline": "Ihre globale Nachrichtenquelle",
+    "aboutTitle": "Über",
+    "aboutText": "News Hub aggregiert die neuesten Nachrichten von vertrauenswürdigen Quellen weltweit und bietet Ihnen ein modernes, mehrsprachiges Leseerlebnis.",
+    "languagesTitle": "Sprachen",
     "poweredBy": "Betrieben von",
     "rights": "Alle Rechte vorbehalten."
   }
