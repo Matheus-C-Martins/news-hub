@@ -15,7 +15,10 @@
         :articles="filteredArticles"
         :loading="loading"
         :error="error"
+        :has-more="hasMore"
+        :total-results="totalResults"
         @retry="loadNews"
+        @load-more="loadMoreNews"
       />
     </main>
     
@@ -42,6 +45,9 @@ const loading = ref(false)
 const error = ref(null)
 const searchQuery = ref('')
 const activeCategory = ref('general')
+const currentPage = ref(1)
+const totalResults = ref(0)
+const hasMore = ref(false)
 
 const toggleTheme = () => {
   isDarkMode.value = !isDarkMode.value
@@ -52,6 +58,8 @@ const changeLanguage = (lang) => {
   currentLanguage.value = lang
   locale.value = lang
   localStorage.setItem('language', lang)
+  currentPage.value = 1
+  articles.value = []
   loadNews(activeCategory.value)
 }
 
@@ -70,22 +78,48 @@ const handleSearch = (query) => {
 const handleCategoryFilter = (category) => {
   activeCategory.value = category
   searchQuery.value = ''
+  currentPage.value = 1
+  articles.value = []
   loadNews(category)
 }
 
-const loadNews = async (category = 'general') => {
+const loadNews = async (category = 'general', append = false) => {
   loading.value = true
   error.value = null
   
   try {
-    const data = await fetchNews(currentLanguage.value, category, searchQuery.value)
-    articles.value = data.articles || []
+    const data = await fetchNews(
+      currentLanguage.value, 
+      category, 
+      searchQuery.value,
+      currentPage.value,
+      20 // pageSize
+    )
+    
+    const newArticles = data.articles || []
+    
+    if (append) {
+      articles.value = [...articles.value, ...newArticles]
+    } else {
+      articles.value = newArticles
+    }
+    
     filteredArticles.value = articles.value
+    totalResults.value = data.totalResults || 0
+    hasMore.value = articles.value.length < totalResults.value
+    
   } catch (err) {
     error.value = err.message
     console.error('Error loading news:', err)
   } finally {
     loading.value = false
+  }
+}
+
+const loadMoreNews = () => {
+  if (!loading.value && hasMore.value) {
+    currentPage.value++
+    loadNews(activeCategory.value, true)
   }
 }
 

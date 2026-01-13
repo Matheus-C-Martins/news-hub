@@ -1,6 +1,6 @@
 <template>
   <div class="news-list">
-    <div v-if="loading" class="loading-state">
+    <div v-if="loading && articles.length === 0" class="loading-state">
       <div class="loading-animation">
         <div class="spinner"></div>
         <div class="pulse-ring"></div>
@@ -44,7 +44,9 @@
     <div v-else>
       <div class="results-header">
         <h2>{{ t('results.title') }}</h2>
-        <p class="results-count">{{ articles.length }} {{ t('results.articles') }}</p>
+        <p class="results-count">
+          {{ articles.length }} / {{ totalResults }} {{ t('results.articles') }}
+        </p>
       </div>
       
       <div class="articles-grid">
@@ -52,8 +54,25 @@
           v-for="(article, index) in articles" 
           :key="index"
           :article="article"
-          :style="{ animationDelay: `${index * 0.05}s` }"
+          :style="{ animationDelay: `${(index % 20) * 0.05}s` }"
         />
+      </div>
+      
+      <div v-if="hasMore" class="load-more-section">
+        <button 
+          class="load-more-btn"
+          @click="$emit('load-more')"
+          :disabled="loading"
+        >
+          <svg v-if="!loading" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+          <div v-else class="btn-spinner"></div>
+          {{ loading ? t('loading.more') : t('actions.loadMore') }}
+        </button>
+        <p class="pagination-info">
+          {{ t('pagination.showing') }} {{ articles.length }} {{ t('pagination.of') }} {{ totalResults }}
+        </p>
       </div>
     </div>
   </div>
@@ -77,10 +96,18 @@ defineProps({
   error: {
     type: String,
     default: null
+  },
+  hasMore: {
+    type: Boolean,
+    default: false
+  },
+  totalResults: {
+    type: Number,
+    default: 0
   }
 })
 
-defineEmits(['retry'])
+defineEmits(['retry', 'load-more'])
 </script>
 
 <style lang="scss" scoped>
@@ -142,6 +169,70 @@ defineEmits(['retry'])
   }
 }
 
+.load-more-section {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.load-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px var(--accent-color-alpha);
+  
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--accent-color-alpha);
+    
+    svg {
+      transform: translateY(3px);
+    }
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  svg {
+    transition: transform 0.3s ease;
+  }
+}
+
+.btn-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pagination-info {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin: 0;
+  font-weight: 500;
+}
+
 .loading-state,
 .error-state,
 .empty-state {
@@ -193,12 +284,6 @@ defineEmits(['retry'])
   border-radius: 50%;
   animation: pulse 2s ease-out infinite;
   opacity: 0.5;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes pulse {
@@ -269,6 +354,15 @@ defineEmits(['retry'])
     h2 {
       font-size: 1.5rem;
     }
+  }
+  
+  .load-more-section {
+    margin-top: 2rem;
+  }
+  
+  .load-more-btn {
+    width: 100%;
+    max-width: 300px;
   }
   
   .loading-state,

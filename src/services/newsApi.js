@@ -14,11 +14,11 @@ const languageMap = {
   de: 'de'
 }
 
-export const fetchNews = async (language = 'en', category = 'general', query = '') => {
+export const fetchNews = async (language = 'en', category = 'general', query = '', page = 1, pageSize = 20) => {
   try {
     if (!API_KEY) {
       console.warn('NewsAPI key not configured. Using mock data.')
-      return getMockNews(category)
+      return getMockNews(category, page, pageSize)
     }
     
     const country = languageMap[language] || 'us'
@@ -27,6 +27,8 @@ export const fetchNews = async (language = 'en', category = 'general', query = '
     // Build NewsAPI URL
     const params = new URLSearchParams({
       apiKey: API_KEY,
+      page: page.toString(),
+      pageSize: pageSize.toString(),
       ...(query ? { q: query, language } : { country, category })
     })
     
@@ -56,16 +58,16 @@ export const fetchNews = async (language = 'en', category = 'general', query = '
     // Check if it's a CORS error
     if (error.message?.includes('CORS') || error.message?.includes('cors')) {
       console.warn('CORS error detected. Using mock data.')
-      return getMockNews(category)
+      return getMockNews(category, page, pageSize)
     }
     
     // Return mock data on error for demo purposes
-    return getMockNews(category)
+    return getMockNews(category, page, pageSize)
   }
 }
 
-const getMockNews = (category) => {
-  const categories = {
+const getMockNews = (category, page = 1, pageSize = 20) => {
+  const allArticles = {
     general: [
       {
         source: { id: null, name: 'BBC News' },
@@ -182,11 +184,15 @@ const getMockNews = (category) => {
     ]
   }
 
-  const articles = categories[category] || categories.general
+  const articles = allArticles[category] || allArticles.general
+  const totalResults = articles.length
+  const startIndex = (page - 1) * pageSize
+  const endIndex = startIndex + pageSize
+  const paginatedArticles = articles.slice(startIndex, endIndex)
   
   return {
     status: 'ok',
-    totalResults: articles.length,
-    articles: articles
+    totalResults: totalResults,
+    articles: paginatedArticles
   }
 }
