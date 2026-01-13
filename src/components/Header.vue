@@ -169,6 +169,17 @@ const categories = [
   cursor: pointer;
   transition: all 0.3s ease;
   
+  option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 0.5rem;
+    
+    &:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+  }
+  
   &:hover {
     border-color: var(--accent-color);
     background: var(--accent-color-alpha);
@@ -225,6 +236,7 @@ const categories = [
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
+  justify-content: center;
   gap: 0.75rem;
   min-width: min-content;
 }
@@ -309,6 +321,7 @@ const categories = [
   
   .categories-container {
     padding: 0.75rem 1rem;
+    justify-content: flex-start;
   }
   
   .category-btn {
