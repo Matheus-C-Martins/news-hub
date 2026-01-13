@@ -19,7 +19,8 @@
   },
   "loading": {
     "articles": "Chargement des Articles",
-    "subtitle": "Récupération des dernières actualités pour vous..."
+    "subtitle": "Récupération des dernières actualités pour vous...",
+    "more": "Chargement..."
   },
   "error": {
     "title": "Oups! Quelque chose s'est mal passé",
@@ -32,7 +33,14 @@
   },
   "results": {
     "title": "Dernières Actualités",
-    "articles": "articles trouvés"
+    "articles": "articles"
+  },
+  "actions": {
+    "loadMore": "Charger Plus d'Articles"
+  },
+  "pagination": {
+    "showing": "Affichage de",
+    "of": "sur"
   },
   "footer": {
     "tagline": "Votre source mondiale d'actualités",

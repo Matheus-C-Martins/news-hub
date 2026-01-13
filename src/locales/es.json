@@ -19,11 +19,12 @@
   },
   "loading": {
     "articles": "Cargando Artículos",
-    "subtitle": "Obteniendo las últimas noticias para ti..."
+    "subtitle": "Obteniendo las últimas noticias para ti...",
+    "more": "Cargando Más..."
   },
   "error": {
     "title": "¡Ups! Algo salió mal",
-    "description": "No pudimos cargar las noticias. Por favor, inténtalo de nuevo más tarde.",
+    "description": "No pudimos cargar las noticias. Inténtalo de nuevo más tarde.",
     "retry": "Intentar de Nuevo"
   },
   "empty": {
@@ -32,7 +33,14 @@
   },
   "results": {
     "title": "Últimas Noticias",
-    "articles": "artículos encontrados"
+    "articles": "artículos"
+  },
+  "actions": {
+    "loadMore": "Cargar Más Artículos"
+  },
+  "pagination": {
+    "showing": "Mostrando",
+    "of": "de"
   },
   "footer": {
     "tagline": "Tu fuente global de noticias",

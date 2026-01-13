@@ -19,7 +19,8 @@
   },
   "loading": {
     "articles": "A Carregar Artigos",
-    "subtitle": "A obter as últimas notícias para si..."
+    "subtitle": "A obter as últimas notícias para si...",
+    "more": "A Carregar Mais..."
   },
   "error": {
     "title": "Ops! Algo correu mal",
@@ -32,7 +33,14 @@
   },
   "results": {
     "title": "Últimas Notícias",
-    "articles": "artigos encontrados"
+    "articles": "artigos"
+  },
+  "actions": {
+    "loadMore": "Carregar Mais Artigos"
+  },
+  "pagination": {
+    "showing": "A mostrar",
+    "of": "de"
   },
   "footer": {
     "tagline": "A sua fonte global de notícias",

@@ -19,7 +19,8 @@
   },
   "loading": {
     "articles": "Artikel Werden Geladen",
-    "subtitle": "Die neuesten Nachrichten für Sie werden abgerufen..."
+    "subtitle": "Die neuesten Nachrichten für Sie werden abgerufen...",
+    "more": "Wird Geladen..."
   },
   "error": {
     "title": "Hoppla! Etwas ist schief gelaufen",
@@ -32,7 +33,14 @@
   },
   "results": {
     "title": "Neueste Nachrichten",
-    "articles": "Artikel gefunden"
+    "articles": "Artikel"
+  },
+  "actions": {
+    "loadMore": "Mehr Artikel Laden"
+  },
+  "pagination": {
+    "showing": "Anzeigen von",
+    "of": "von"
   },
   "footer": {
     "tagline": "Ihre globale Nachrichtenquelle",

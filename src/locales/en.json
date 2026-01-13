@@ -19,7 +19,8 @@
   },
   "loading": {
     "articles": "Loading Articles",
-    "subtitle": "Fetching the latest news for you..."
+    "subtitle": "Fetching the latest news for you...",
+    "more": "Loading More..."
   },
   "error": {
     "title": "Oops! Something went wrong",
@@ -32,7 +33,14 @@
   },
   "results": {
     "title": "Latest News",
-    "articles": "articles found"
+    "articles": "articles"
+  },
+  "actions": {
+    "loadMore": "Load More Articles"
+  },
+  "pagination": {
+    "showing": "Showing",
+    "of": "of"
   },
   "footer": {
     "tagline": "Your global news source",
