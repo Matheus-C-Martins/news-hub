@@ -14,18 +14,24 @@ const languageMap = {
 export const fetchNews = async (language = 'en', category = 'general', query = '') => {
   try {
     const country = languageMap[language] || 'us'
-    
+
     if (!API_KEY) {
       // Return mock data for development/demo
       return getMockNews(category)
     }
-    
+
     const endpoint = query ? 'everything' : 'top-headlines'
     const params = {
       apiKey: API_KEY,
-      ...(query ? { q: query, language } : { country, category })
+      ...(query ? { q: query, language } : { country, category }),
+      headers: {
+        'Referer': 'https://localhost:5173',
+        'Origin': 'https://localhost:5173',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Accept': 'application/json'
+      }
     }
-    
+
     const response = await axios.get(`${BASE_URL}/${endpoint}`, { params })
     return response.data
   } catch (error) {

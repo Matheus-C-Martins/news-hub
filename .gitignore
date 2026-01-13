@@ -25,5 +25,17 @@ dist-ssr
 
 # Environment variables
 .env
+.env.development.local
+.env.test.local
+.env.production.local
 .env.local
-.env.*.local
+
+# OS Files
+Thumbs.db
+db.json
+
+# Testing
+coverage/
+
+# Vite
+*.timestamp-*

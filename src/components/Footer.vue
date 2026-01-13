@@ -1,19 +1,6 @@
 <template>
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h3>News Hub</h3>
-          <p>{{ t('footer.tagline') }}</p>
-        </div>
-        
-        <div class="footer-links">
-          <a href="https://newsapi.org" target="_blank" rel="noopener noreferrer">
-            {{ t('footer.poweredBy') }} NewsAPI
-          </a>
-        </div>
-      </div>
-      
       <div class="footer-bottom">
         <p>&copy; {{ currentYear }} News Hub. {{ t('footer.rights') }}</p>
       </div>
@@ -39,7 +26,7 @@ const currentYear = computed(() => new Date().getFullYear())
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem 1rem;
+  padding: 1rem;
 }
 
 .footer-content {
@@ -82,10 +69,7 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-bottom {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
   text-align: center;
-  
   p {
     margin: 0;
     color: var(--text-secondary);

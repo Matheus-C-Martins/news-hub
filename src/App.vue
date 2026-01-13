@@ -3,16 +3,14 @@
     <Header 
       @toggle-theme="toggleTheme"
       @change-language="changeLanguage"
+      @filter="handleCategoryFilter"
       :is-dark-mode="isDarkMode"
       :current-language="currentLanguage"
+      :active-category="activeCategory"
     />
     
     <main class="main-content">
       <SearchBar @search="handleSearch" />
-      <CategoryFilter 
-        @filter="handleCategoryFilter"
-        :active-category="activeCategory"
-      />
       <NewsList 
         :articles="filteredArticles"
         :loading="loading"
@@ -29,7 +27,6 @@ import { ref, onMounted, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Header from './components/Header.vue'
 import SearchBar from './components/SearchBar.vue'
-import CategoryFilter from './components/CategoryFilter.vue'
 import NewsList from './components/NewsList.vue'
 import Footer from './components/Footer.vue'
 import { fetchNews } from './services/newsApi'
